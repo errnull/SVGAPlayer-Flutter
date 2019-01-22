@@ -15,6 +15,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
+import 'dart:async';
+import 'dart:io';
+import 'dart:typed_data';
+
 class SVGAPlayer extends StatefulWidget {
 
     const SVGAPlayer({
@@ -51,6 +55,7 @@ class _SVGAPlayerState extends State<SVGAPlayer> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+  
   }
 
   @override
