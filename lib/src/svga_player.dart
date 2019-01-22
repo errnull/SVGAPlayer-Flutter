@@ -19,6 +19,9 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'svga_parser.dart';
+import 'svga_video_entity.dart';
+
 class SVGAPlayer extends StatefulWidget {
 
     const SVGAPlayer({
@@ -54,8 +57,19 @@ class _SVGAPlayerState extends State<SVGAPlayer> {
 
   @override
   void didChangeDependencies() {
+    
+    _resolve();
+
     super.didChangeDependencies();
-  
+  }
+
+  void  _resolve() {
+
+    var parser = NetworkSVGAParser(this.widget.url);
+    
+    final SVGAVideoEntity entity = parser.resolve();
+
+    print(entity);
   }
 
   @override
